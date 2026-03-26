@@ -155,6 +155,7 @@ export default function SolutionsMarketplace() {
                         ))}
                     </div>
                 </section>
+                <div className=" bg-amber-200 h-4 w-2xs"></div>
 
             </div>
         </div>

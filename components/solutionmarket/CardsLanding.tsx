@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import {
     LayoutGrid, Bookmark,
     MoreVertical, Eye, Pencil, Play, Copy
@@ -7,8 +8,9 @@ import {
 import "@/styles/css/CardsLanding.css"
 import "@/styles/css/Navbar.css"
 
-export default function SolutionCard({title, description, tags, gradient}:
+export default function SolutionCard({id, title, description, tags, gradient}:
 {
+    id: number | string,
     title: string,
     description: string,
     tags: string[],
@@ -17,7 +19,7 @@ export default function SolutionCard({title, description, tags, gradient}:
 {
     return (
         <div style={{ backgroundColor: gradient }} className="solution-card">
-
+            {/* ... rest of the card header ... */}
             <div className="solution-card-header">
                 <div className="card-header-top">
                     <div className="icon-container">
@@ -72,10 +74,10 @@ export default function SolutionCard({title, description, tags, gradient}:
                         </button>
 
                         {/* Play Button */}
-                        <button className="card-nav-btn play">
+                        <Link href={`/solution/playground/${id}`} className="card-nav-btn play">
                             <Play size={16} />
                             <span className="card-nav-btn-text">Play</span>
-                        </button>
+                        </Link>
 
                     </div>
                 </div>
