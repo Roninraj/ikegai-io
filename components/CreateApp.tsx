@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import { ChevronDown, Info } from 'lucide-react';
 import '@/styles/css/CreateApp.css';
 
 const CreateAppDropdown = () => {
@@ -33,20 +34,23 @@ const CreateAppDropdown = () => {
 
             {/* Dropdown Menu */}
             {isOpen && (
-                <ul className="dropdown-menu">
-                    <li 
+                <div className="dropdown-menu">
+                    <Link 
+                        href="/solution/agent-builder"
                         className="dropdown-item"
-                        onClick={() => { console.log("Form Builder"); setIsOpen(false); }}
+                        onClick={() => setIsOpen(false)}
+                        style={{ textDecoration: 'none' }}
                     >
                         <span className="dropdown-item-text">Form Builder</span>
-                    </li>
-                    <li 
+                    </Link>
+                    <button 
                         className="dropdown-item"
                         onClick={() => { console.log("Visual Builder"); setIsOpen(false); }}
                     >
                         <span className="dropdown-item-text">Visual Builder</span>
-                    </li>
-                </ul>
+                        <Info className="info-icon" size={16} />
+                    </button>
+                </div>
             )}
         </div>
     );

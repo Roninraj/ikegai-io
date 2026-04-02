@@ -145,10 +145,10 @@
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  gap: 10px;
-  width: 100%;
-  justify-content: left;
+  grid-template-columns: repeat(4, 300px);
+  gap: 20px;
+  width: 85%;
+  justify-content: start;
 }
 
 .pt-4 {
